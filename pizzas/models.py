@@ -16,3 +16,13 @@ class Topping(models.Model):
 
     def __str__(self):
         return self.name
+
+class Comments(models.Model):
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    name = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Comments'
+
+    def __str__(self):
+        return self.name
